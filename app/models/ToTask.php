@@ -18,7 +18,7 @@ class ToTask {
      * @return array
      */
     public function GetUser($login, $password){
-        $sql = 'SELECT * FROM users WHERE login = :login and password = :password';
+        $sql = 'SELECT login FROM users WHERE login = :login and password = :password';
         $result = $this->db->prepare($sql);
         $result->bindParam(':login', $login, PDO::PARAM_STR);
         $result->bindParam(':password', $password, PDO::PARAM_STR);
